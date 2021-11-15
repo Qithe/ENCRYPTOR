@@ -8,16 +8,18 @@ namespace ENCRYPTOR
         {
             Pirate_encryptor pirate = new Pirate_encryptor();
             FileHandeler handler = new FileHandeler();
-            string x = pirate.Encrypt("Hello World");
-            Console.WriteLine(x);
-            Console.WriteLine(pirate.Decrypt(x));
-            Console.WriteLine(handler.Reader(@"C:\Users\Oscar\Desktop\", "Test.txt"));
+            //string x = pirate.Encrypt("Hello World");
+            //Console.WriteLine(x);
+            //Console.WriteLine(pirate.Decrypt(x));
+            //Console.WriteLine(handler.Reader(@"C:\Users\Oscar\Desktop\", "Test.txt"));
 
             string y = pirate.Encrypt(handler.Reader(@"C:\Users\Oscar\Desktop\", "Test.txt"));
             Console.WriteLine(y);
-            handler.Writer(@"C:\Users\Oscar\Desktop\", "Test.txt", y);
+            handler.Writer(@"C:\Users\Oscar\Desktop\", "Test_encrypted.txt", y);
 
-
+            string z = pirate.Decrypt(handler.Reader(@"C:\Users\Oscar\Desktop\", "Test_encrypted.txt"));
+            Console.WriteLine(z);
+            handler.Writer(@"C:\Users\Oscar\Desktop\", "Test_decrypted.txt", z);
 
         }
 
