@@ -74,7 +74,7 @@ namespace ENCRYPTOR
 
         private bool IsVowel(char c)
         {
-            return "aeiouAEIOU".IndexOf(c) >= 0;
+            return "aeiouyåäöAEIOUYÅÄÖ".IndexOf(c) >= 0;
         }
     }
 }
